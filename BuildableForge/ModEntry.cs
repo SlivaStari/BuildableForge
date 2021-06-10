@@ -45,7 +45,7 @@ namespace BuildableForge
         private void OnMenuChanged(object sender, MenuChangedEventArgs e)
         {
             // Add the blueprint
-            if (e.NewMenu is CarpenterMenu carpenterMenu)
+            if (e.NewMenu is CarpenterMenu carpenterMenu && Game1.MasterPlayer.hasOrWillReceiveMail("reachedCaldera"))
             {
                 bool isMagicalMenu = Helper.Reflection.GetField<bool>(carpenterMenu, "magicalConstruction").GetValue();
 
